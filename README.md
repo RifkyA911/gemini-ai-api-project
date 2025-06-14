@@ -1,6 +1,6 @@
 # Gemini Multimodal API (Bun + Express + TypeScript)
 
-> ℹ️ Built as part of the "AI Productivity and AI API Integration for Developers" course on PartnershipsH8" - 🦊 Hacktiv8
+> ℹ️🍎 Built as part of the "AI Productivity and AI API Integration for Developers" course on PartnershipsH8" - 🦊 Hacktiv8
 
 This project demonstrates how to build a robust RESTful API using **Bun**, **Express**, and **TypeScript** to interact with **Google Gemini 2.0 Flash**. The API is designed to handle various types of multimodal input—text, images, documents, and audio—allowing you to build smart and versatile AI applications.
 
@@ -165,7 +165,7 @@ The following endpoints are available to interact with Gemini.
 │   ├── helper/             # Helper functions
 │   │   ├── gemini.ts           # Gemini API helper
 │   ├── routes/             # API route definitions
-│   │   ├── route.ts            # ..
+│   │   ├── route.ts            # API route definitions (generate-text, generate-from-image, etc.)
 │   ├── utils/              # Utility functions
 │   │   ├── upload.ts           # multer configuration
 │   └── index.ts            # Main application file
