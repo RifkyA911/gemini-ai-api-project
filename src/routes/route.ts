@@ -9,6 +9,7 @@ const genAI = new GoogleGenerativeAI(
 
 const route = express.Router();
 
+// Skipped
 route.get("/", (req, res) => {
 	return res.send("Hello Bun with Express");
 });
@@ -131,6 +132,29 @@ route.post(
 		}
 	}
 );
+
+route.post("/api/chat", async (req, res) => {
+	const userMessage = req.body.message;
+
+	const model = genAI.getGenerativeModel({
+		model: "gemini-2.0-flash",
+	});
+
+	if (!userMessage) {
+		return res.status(400).json({ reply: "Message is required." });
+	}
+
+	try {
+		const result = await model.generateContent(userMessage);
+		const response = await result.response;
+		const text = response.text(); // Assuming .text() is a method to extract the text content
+
+		res.json({ reply: text });
+	} catch (err) {
+		console.error(err);
+		res.status(500).json({ reply: "Something went wrong." });
+	}
+});
 
 export default route;
 
